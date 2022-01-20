@@ -34,20 +34,20 @@ pipeline{
       stage('predeployment'){
       steps{
         sh "echo creating docker image"
-        sh "docker build -t camchi/maven-web-app . "
-        sh "docker push camchi/maven-web-app"
+        sh "docker build -t camchi/bole . "
+        sh "docker push camchi/bole"
       }
     }
     stage('UnDeploy'){
       steps{
         sh "echo UNDEPLOYING existing application"
-        sh "docker rm -f webapp"
+        sh "docker rm -f maven-web-app"
       }
     }
     stage('deployment'){
       steps{
         sh "echo application ready for deployment"
-        sh "docker run -d -p 8000:8080 --name webapp camchi/maven-web-app"
+        sh "docker run -d -p 5700:8080 --name webapp camchi/bole"
       }
     }
   stage('emailNotification'){
