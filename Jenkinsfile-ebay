@@ -35,7 +35,7 @@ pipeline{
       steps{
         sh "echo creating docker image"
         sh "docker build -t camchi/maven-web-app . "
-        sh "docker push mylandmarktech/maven-web-app"
+        sh "docker push camchi/maven-web-app"
       }
     }
     stage('UnDeploy'){
