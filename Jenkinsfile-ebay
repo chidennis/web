@@ -27,7 +27,7 @@ pipeline{
       stage('upLoadArtifacts'){
       steps{
         sh "echo Running detail code analysis"
-        sh "mvn deploy"
+       // sh "mvn deploy"
         sh "echo backupArtifacts in nexus"
       }
     }
