@@ -59,10 +59,11 @@ pipeline{
         sh "docker run -d -p 5700:8080 --name class27 camchi/bole"
       }
     }
+    
   stage('emailNotification'){
     steps{
       sh "echo deployment successful"
     }
   }
-
+}
 }
