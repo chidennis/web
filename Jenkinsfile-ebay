@@ -44,6 +44,13 @@ pipeline{
         sh "docker rm -f webapp"
       }
     }
+    
+    }
+    stage('7.Approval'){
+    timeout(time:5, unit:'DAYS'){
+ 			input message: 'Approval for production'
+      }
+      
     stage('deployment'){
       steps{
         sh "echo application ready for deployment"
