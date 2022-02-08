@@ -45,7 +45,7 @@ pipeline{
       }
     }
     
-    }
+    
     stage('Approval'){
     timeout(time:5, unit:'DAYS'){
  			input message: 'Approval for production'
@@ -64,5 +64,5 @@ pipeline{
       sh "echo deployment successful"
     }
   }
-}
+
 }
