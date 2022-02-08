@@ -46,10 +46,12 @@ pipeline{
     }
     
     }
-    stage('7.Approval'){
+    stage('Approval'){
     timeout(time:5, unit:'DAYS'){
  			input message: 'Approval for production'
       }
+    }
+    
       
     stage('deployment'){
       steps{
