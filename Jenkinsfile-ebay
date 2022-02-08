@@ -35,8 +35,8 @@ pipeline{
       steps{
         sh "echo creating docker image"
         //sh " docker login -u camchi"
-        sh "docker build -t camchi/bole . "
-        sh "docker push camchi/bole"
+        sh "docker build -t camchi/rice . "
+        sh "docker push camchi/rice"
       }
     }
     stage('UnDeploy'){
@@ -61,7 +61,7 @@ pipeline{
     stage('deployment'){
       steps{
         sh "echo application ready for deployment"
-        sh "docker run -d -p 5700:8080 --name class27 camchi/bole"
+        sh "docker run -d -p 5700:8080 --name friday camchi/rice"
       }
     }
     
