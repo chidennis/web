@@ -34,6 +34,7 @@ pipeline{
       stage('predeployment'){
       steps{
         sh "echo creating docker image"
+        sh " docker login -u camchi"
         sh "docker build -t camchi/bole . "
         sh "docker push camchi/bole"
       }
