@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: first-container
-      image: nginx
+      image: dennislandmark25/nginx
       ports:
       - containerPort: 80
