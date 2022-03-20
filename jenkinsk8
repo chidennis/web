@@ -34,7 +34,11 @@ node
     //  }
     }
       stage('predeployment'){
+          withCredentials([string(credentialsId: 'DOKCER_HUB_PASSWORD', variable: 'DOKCER_HUB_PASSWORD')]) {
+          sh "docker login -u mylandmarktech -p ${DOKCER_HUB_PASSWORD}"
+        }
       steps{
+      
         sh "echo creating docker image"
         sh " docker login -u camchi"
         sh "docker build -t camchi/rice . "
