@@ -21,7 +21,7 @@ pipeline{
       stage('predeployment'){
       steps{
         sh "echo creating docker image"
-        sh " docker login -u dennislandmark25"
+        sh "docker login -u dennislandmark25"
         sh "docker build -t dennislandmark25/nginx . "
         sh "docker push dennislandmark25/nginx"
       }
